@@ -1,7 +1,7 @@
 import cv2 
 import numpy as np
 
-img = cv2.imread("circles2.jpg") # Read jpg image
+img = cv2.imread("circles2.jpg") #Read jpg image
 output = img.copy() # make a copy of the original image
 blur = cv2.medianBlur(img,13) # blur the original image
 gray = cv2.cvtColor(blur,cv2.COLOR_BGR2GRAY) # convert the blurred image into gray scale
