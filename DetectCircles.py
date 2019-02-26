@@ -11,9 +11,11 @@ edges = cv2.Canny(gray, 50, 150, apertureSize = 3)
 
 circles = cv2.HoughCircles(gray, cv2.HOUGH_GRADIENT, 1.2, 100) 
 
-if circles is not None:
-	circles = np.round(circles[0,:].astype("int")
-	for (x,y,r) in circles:
-		cv2.circles(image, (x,y), r), (255, 0, 255), 5)
+if circles is not None: 
+	circles = np.round(circles[0,:]).astype("int") 
 
-	cv2.imwrite(drawncircle.jpg, image)	
+	for (x,y,r) in circles:
+		cv2.circle(image, (x,y), r, (255,0,255), 5) #draws circle around circle with specified color and thickness on image
+	cv2.imwrite("drawncircle.jpg", image)
+
+
